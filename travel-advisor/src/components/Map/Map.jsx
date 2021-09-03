@@ -5,11 +5,10 @@ import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import Rating from  '@material-ui/lab';
 import useStyles from './styles';
 
-export default function Mapp() {
+export default function Mapp({setCoordinates, setBounds, coordinates}) {
     const classes = useStyles();
     const isMobile = useMediaQuery('(min-width:600px)')
- 
-    const coordinates = { lat: 41.40338, lng: 2.17403};
+
 
     return (
         <div className={classes.mapContainer}>
@@ -20,7 +19,10 @@ export default function Mapp() {
                defaultZoom={14}
                margin={[50, 50, 50, 50]}
                options={''}
-               onChange={''}
+               onChange={(e) => {
+                   console.log(e)
+                   setCoordinates({ lat: e.center.lat, lng: e.center.lng})
+               }}
                onChildClick={''}
             >
 

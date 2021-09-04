@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { CssBaseline, Grid } from '@material-ui/core';
 
-import getPlacesData from './api';
+import {getPlacesData} from './api';
 import Header from './components/Header/Header';
 import List from './components/List/List';
 import Map from  './components/Map/Map';
@@ -21,7 +21,7 @@ const App = () => {
 
     useEffect(() => {
 
-        getPlacesData(bounds.sw, bounds.ne)
+      getPlacesData()
             .then((data) => {
               console.log(data)
               setPlaces(data)

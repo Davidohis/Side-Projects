@@ -1,20 +1,28 @@
-import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import React, {useState} from 'react';
 import { GlobalStyle } from './globalStyles';
-import Hero from './components/Hero';
-import Products from './components/Products';
-import { productData, productDataTwo } from './components/Products/data';
-import Feature from './components/Feature';
+import Home from './Pages/Home';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Footer from './components/Footer';
+import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
+import Shopping from "./Pages/Shopping";
+
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <Router>
       <GlobalStyle />
-      <Hero />
-      <Products heading='Choose your favorite' data={productData} />
-      <Feature />
-      <Products heading='Sweet Treats for You' data={productDataTwo} />
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <Navbar toggle={toggle} />
+      <Switch>
+        <Route path='/' exact component={Home} />
+        <Route path='/products' component={Shopping} />
+      </Switch>
       <Footer />
     </Router>
   );

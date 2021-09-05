@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const ProductsContainer = styled.div`
   /* width: 100vw; */
@@ -57,7 +58,7 @@ export const ProductPrice = styled.p`
   font-size: 2rem;
 `;
 
-export const ProductButton = styled.button`
+export const ProductButton = styled(Link)`
   font-size: 1rem;
   padding: 1rem 4rem;
   border: none;

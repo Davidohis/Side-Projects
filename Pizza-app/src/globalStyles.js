@@ -53,16 +53,18 @@ export const GlobalStyle = createGlobalStyle`
     text-align: right;
   }
   img.small {
-    max-height: 8rem;
+    height: 300px;
+    min-width: 300px;
+    max-width: 100%;
+    box-shadow: 8px 8px #fdc500;
   }
-  button {
-    font-size: 0.8rem;
-    padding: 0.2rem;
-    margin: 0.1rem;
+  .btn button {
+    font-size: 1rem;
+    padding: 1rem 4rem;
+    border: none;
+    margin: 0.5rem;
     border-radius: 0.5rem;
-    border: 0.1rem #404040 solid;
     background-color: #f0c040;
-    width: 100%;
     cursor: pointer;
   }
   button.add {

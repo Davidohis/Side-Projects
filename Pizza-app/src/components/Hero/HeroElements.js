@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import ImgBg from '../../images/pizza-3.jpg';
+import ImgBg from '../../images/pizza-1.jpg';
+import { Link } from 'react-router-dom';
 
 export const HeroContainer = styled.div`
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),
@@ -46,8 +47,8 @@ export const HeroP = styled.p`
   margin-bottom: 2rem;
 `;
 
-export const HeroBtn = styled.button`
-  font-size: 1.4rem;
+export const HeroBtn = styled(Link)`
+  font-size: 1.2rem;
   padding: 1rem 4rem;
   border: none;
   background: #e31837;
